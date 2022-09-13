@@ -1,136 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:cxf="http://camel.apache.org/schema/cxf" xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd     http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
-	<cxf:rsServer address="http://*:8080/account" id="services" serviceClass="org.test.services">
-		<cxf:providers>
-			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
-		</cxf:providers>
-	</cxf:rsServer>
-	<bean class="org.test.MyBean" id="myBean" name="myBean" />
-	<camelContext id="account-test-context" xmlns="http://camel.apache.org/schema/spring">
-		<dataFormats>
-			<json id="Account" library="Jackson" unmarshalTypeName="org.test.Account" />
-			<json id="DeletedDto" library="Jackson" unmarshalTypeName="org.test.DeletedDto" />
-			<json id="AccountList" library="Jackson" unmarshalTypeName="org.test.Account" useList="true" />
-		</dataFormats>
-		<route id="routeeeee">
-			<from id="base-service" uri="cxfrs:bean:services?bindingStyle=SimpleConsumer" />
-			<toD id="operationName" uri="direct:${header.operationName}" />
-		</route>
-		<route id="route11">
-			<from id="id1" uri="direct:addAccount" />
-			<to id="_to6" uri="direct:post-header-from" />
-			<marshal id="_marshal1" ref="Account" />
-			<toD id="_to1" uri="http://localhost:3001${property.pathV}" />
-		</route>
-		<route id="route1">
-			<from id="id11" uri="direct:addaccounts" />
-			<marshal id="_marshal2" ref="AccountList" />
-			<to id="_to7" uri="direct:post-header-from" />
-			<toD id="_to11" uri="http://localhost:3001${property.pathV}" />
-		</route>
-		<route id="route2">
-			<from id="id3=2" uri="direct:getAccount" />
-			<to id="_to8" uri="direct:get-header-from" />
-			<toD id="_to2" uri="http://localhost:3001${property.pathV}" />
-		</route>
-		<route id="route3">
-			<from id="id3" uri="direct:getAllAccounts" />
-			<to id="_to9" uri="direct:get-header-from" />
-			<toD id="_to3" uri="http://localhost:3001${property.pathV}" />
-		</route>
-		<route id="route4">
-			<from id="id4" uri="direct:updateAccount" />
-			<marshal id="_marshdsal2" ref="AccountList" />
-			<to id="_to10" uri="direct:put-header-from" />
-			<toD id="_to4" uri="http://localhost:3001${property.pathV}" />
-		</route>
-
-		<route id="routedds">
-			<from id="id4" uri="direct:updateName" />
-			<to id="_toxc10" uri="direct:post-header-from" />
-			<setBody id="empdstyBodvy">
-				<constant />
-			</setBody>
-			<toD id="_toxc4" uri="http://localhost:3001${property.pathV}" />
-		</route>
-
-		<route id="route5">
-			<from id="id45" uri="direct:deleteAccount" />
-			<to id="_to12" uri="direct:delete-header-from" />
-			<setBody id="emptyBodvy">
-				<constant />
-			</setBody>
-			<toD id="_to5" uri="http://localhost:3001${property.pathV}" />
-		</route>
-		<route id="route55">
-			<from id="id452" uri="direct:delete2" />
-			<marshal id="_marshalad1" ref="DeletedDto" />
-			<to id="_to1kj2" uri="direct:delete-header-from" />
-			<toD id="_to25" uri="http://localhost:3001${property.pathV}?deleteWithBody=true" />
-		</route>
-		<route id="route66">
-			<from id="id4d52" uri="direct:uploadfile" />
-			<to id="_to1d3" uri="direct:post-header-from" />
-			<setHeader headerName="Content-Type" id="content-type-header67">
-				<constant>multipart/form-data;charset=UTF-8</constant>
-			</setHeader>
-
-			<toD id="_toa25" uri="http://localhost:3001${property.pathV}" />
-		</route>
-		<route id="get-header-route">
-			<from id="get-header" uri="direct:get-header-from" />
-			<setProperty id="_setProperty1" propertyName="pathV">
-				<simple>${header.CamelHttpUri}</simple>
-			</setProperty>
-			<removeHeaders id="_removeHeaders1" pattern="CamelHttp*" />
-			<setHeader headerName="Content-Type" id="content-type-header1">
-				<constant>application/json;charset=UTF-8</constant>
-			</setHeader>
-			<setHeader headerName="CamelHttpMethod" id="method-header1">
-				<constant>GET</constant>
-			</setHeader>
-			<setBody id="emptyBody">
-				<constant />
-			</setBody>
-		</route>
-		<route id="post-header-route">
-			<from id="post-header" uri="direct:post-header-from" />
-			<setProperty id="_setProperty2" propertyName="pathV">
-				<simple>${header.CamelHttpUri}</simple>
-			</setProperty>
-			<removeHeaders id="_removeHeaders2" pattern="CamelHttp*" />
-			<setHeader headerName="Content-Type" id="content-type-header2">
-				<constant>application/json;charset=UTF-8</constant>
-			</setHeader>
-			<setHeader headerName="CamelHttpMethod" id="method-header2">
-				<constant>POST</constant>
-			</setHeader>
-		</route>
-		<route id="put-header-route">
-			<from id="put-header" uri="direct:put-header-from" />
-			<setProperty id="_setProperty3" propertyName="pathV">
-				<simple>${header.CamelHttpUri}</simple>
-			</setProperty>
-			<removeHeaders id="_removeHeaders3" pattern="CamelHttp*" />
-			<setHeader headerName="Content-Type" id="content-type-header3">
-				<constant>application/json;charset=UTF-8</constant>
-			</setHeader>
-			<setHeader headerName="CamelHttpMethod" id="method-header3">
-				<constant>PUT</constant>
-			</setHeader>
-		</route>
-		<route id="delete-header-route">
-			<from id="delete-header" uri="direct:delete-header-from" />
-			<setProperty id="_setProperty4" propertyName="pathV">
-				<simple>${header.CamelHttpUri}</simple>
-			</setProperty>
-			<removeHeaders id="_removeHeaders4" pattern="CamelHttp*" />
-			<setHeader headerName="Content-Type" id="content-type-header4">
-				<constant>application/json;charset=UTF-8</constant>
-			</setHeader>
-			<setHeader headerName="CamelHttpMethod" id="method-header4">
-				<constant>DELETE</constant>
-			</setHeader>
-		</route>
-	</camelContext>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:cxf="http://camel.apache.org/schema/cxf"
+    xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd     http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <cxf:rsServer address="http://*:8080/account" id="services" serviceClass="org.test.services">
+        <cxf:providers>
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+        </cxf:providers>
+    </cxf:rsServer>
+    <bean class="org.test.MyBean" id="myBean" name="myBean"/>
+    <camelContext id="account-test-context" xmlns="http://camel.apache.org/schema/spring">
+<propertyPlaceholder id="properties" location="classpath:application.properties" />      
+  <dataFormats>
+            <json id="Account" library="Jackson" unmarshalTypeName="org.test.Account"/>
+            <json id="DeletedDto" library="Jackson" unmarshalTypeName="org.test.DeletedDto"/>
+            <json id="AccountList" library="Jackson"
+                unmarshalTypeName="org.test.Account" useList="true"/>
+        </dataFormats>
+        <route id="routeeeee">
+            <from id="base-service" uri="cxfrs:bean:services?bindingStyle=SimpleConsumer"/>
+            <toD id="operationName" uri="direct:${header.operationName}"/>
+        </route>
+        <route id="route11">
+            <from id="id1" uri="direct:addAccount"/>
+            <to id="_to6" uri="direct:post-header-from"/>
+            <marshal id="_marshal1" ref="Account"/>
+            <toD id="_to1" uri="{{SERVER_PATH}}${property.pathV}"/>
+        </route>
+        <route id="route1">
+            <from id="id11" uri="direct:addaccounts"/>
+            <marshal id="_marshal2" ref="AccountList"/>
+            <to id="_to7" uri="direct:post-header-from"/>
+            <toD id="_to11" uri="{{SERVER_PATH}}${property.pathV}"/>
+        </route>
+        <route id="route2">
+            <from id="id3=2" uri="direct:getAccount"/>
+            <to id="_to8" uri="direct:get-header-from"/>
+            <toD id="_to2" uri="{{SERVER_PATH}}${property.pathV}"/>
+        </route>
+        <route id="route3">
+            <from id="id3" uri="direct:getAllAccounts"/>
+            <to id="_to9" uri="direct:get-header-from"/>
+            <toD id="_to3" uri="{{SERVER_PATH}}${property.pathV}"/>
+        </route>
+        <route id="route4">
+            <from id="id4" uri="direct:updateAccount"/>
+            <marshal id="_marshdsal2" ref="AccountList"/>
+            <to id="_to10" uri="direct:put-header-from"/>
+            <toD id="_to4" uri="{{SERVER_PATH}}${property.pathV}"/>
+        </route>
+        <route id="routedds">
+            <from id="id4" uri="direct:updateName"/>
+            <to id="_toxc10" uri="direct:post-header-from"/>
+            <setBody id="empdstyBodvy">
+                <constant/>
+            </setBody>
+            <toD id="_toxc4" uri="{{SERVER_PATH}}${property.pathV}"/>
+        </route>
+        <route id="route5">
+            <from id="id45" uri="direct:deleteAccount"/>
+            <to id="_to12" uri="direct:delete-header-from"/>
+            <setBody id="emptyBodvy">
+                <constant/>
+            </setBody>
+            <toD id="_to5" uri="{{SERVER_PATH}}${property.pathV}"/>
+        </route>
+        <route id="route55">
+            <from id="id452" uri="direct:delete2"/>
+            <marshal id="_marshalad1" ref="DeletedDto"/>
+            <to id="_to1kj2" uri="direct:delete-header-from"/>
+            <toD id="_to25" uri="{{SERVER_PATH}}${property.pathV}?deleteWithBody=true"/>
+        </route>
+        <route id="route66">
+            <from id="id4d52" uri="direct:uploadfile"/>
+            <to id="_to1d3" uri="direct:post-header-from"/>
+            <setHeader headerName="Content-Type" id="content-type-header67">
+                <constant>multipart/form-data;charset=UTF-8</constant>
+            </setHeader>
+            <toD id="_toa25" uri="{{SERVER_PATH}}${property.pathV}"/>
+        </route>
+        <route id="get-header-route">
+            <from id="get-header" uri="direct:get-header-from"/>
+            <setProperty id="_setProperty1" propertyName="pathV">
+                <simple>${header.CamelHttpUri}</simple>
+            </setProperty>
+            <removeHeaders id="_removeHeaders1" pattern="CamelHttp*"/>
+            <setHeader headerName="Content-Type" id="content-type-header1">
+                <constant>application/json;charset=UTF-8</constant>
+            </setHeader>
+            <setHeader headerName="CamelHttpMethod" id="method-header1">
+                <constant>GET</constant>
+            </setHeader>
+            <setBody id="emptyBody">
+                <constant/>
+            </setBody>
+        </route>
+        <route id="post-header-route">
+            <from id="post-header" uri="direct:post-header-from"/>
+            <setProperty id="_setProperty2" propertyName="pathV">
+                <simple>${header.CamelHttpUri}</simple>
+            </setProperty>
+            <removeHeaders id="_removeHeaders2" pattern="CamelHttp*"/>
+            <setHeader headerName="Content-Type" id="content-type-header2">
+                <constant>application/json;charset=UTF-8</constant>
+            </setHeader>
+            <setHeader headerName="CamelHttpMethod" id="method-header2">
+                <constant>POST</constant>
+            </setHeader>
+        </route>
+        <route id="put-header-route">
+            <from id="put-header" uri="direct:put-header-from"/>
+            <setProperty id="_setProperty3" propertyName="pathV">
+                <simple>${header.CamelHttpUri}</simple>
+            </setProperty>
+            <removeHeaders id="_removeHeaders3" pattern="CamelHttp*"/>
+            <setHeader headerName="Content-Type" id="content-type-header3">
+                <constant>application/json;charset=UTF-8</constant>
+            </setHeader>
+            <setHeader headerName="CamelHttpMethod" id="method-header3">
+                <constant>PUT</constant>
+            </setHeader>
+        </route>
+        <route id="delete-header-route">
+            <from id="delete-header" uri="direct:delete-header-from"/>
+            <setProperty id="_setProperty4" propertyName="pathV">
+                <simple>${header.CamelHttpUri}</simple>
+            </setProperty>
+            <removeHeaders id="_removeHeaders4" pattern="CamelHttp*"/>
+            <setHeader headerName="Content-Type" id="content-type-header4">
+                <constant>application/json;charset=UTF-8</constant>
+            </setHeader>
+            <setHeader headerName="CamelHttpMethod" id="method-header4">
+                <constant>DELETE</constant>
+            </setHeader>
+        </route>
+    </camelContext>
 </beans>
