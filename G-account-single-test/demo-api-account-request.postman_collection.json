@@ -1,0 +1,1794 @@
+{
+	"info": {
+		"_postman_id": "780b17d0-5d6e-49e1-b250-e886d84f4c63",
+		"name": "demo-api-account-request",
+		"description": "Api Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12650096"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"createdOn\": \"2022-07-30T22:00:00.000+00:00\",\n  \"dateOfBirth\": \"2022-07-30T22:00:00.000+00:00\",\n  \"deleted\": false,\n  \"filePath\": \"sint laboris nostrud\",\n  \"id\": 1,\n  \"imageBase\": \"ex sed irure\",\n  \"name\": \"sed et qui laborum sint\",\n  \"updatedOn\": \"2022-07-30T22:00:00.000+00:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"update"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/account/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"update"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/account/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"update"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/account/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"update"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/account/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"update"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/account/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"update"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "updateName",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/account/update/1/name",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"update",
+										"1",
+										"name"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/account/update/:id/:name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"update",
+												":id",
+												":name"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "8785424",
+													"description": "(Required) id"
+												},
+												{
+													"key": "name",
+													"value": "el",
+													"description": "(Required) name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/account/update/:id/:name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"update",
+												":id",
+												":name"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "8785424",
+													"description": "(Required) id"
+												},
+												{
+													"key": "name",
+													"value": "el",
+													"description": "(Required) name"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/account/update/:id/:name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"update",
+												":id",
+												":name"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "8785424",
+													"description": "(Required) id"
+												},
+												{
+													"key": "name",
+													"value": "el",
+													"description": "(Required) name"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/account/update/:id/:name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"update",
+												":id",
+												":name"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "8785424",
+													"description": "(Required) id"
+												},
+												{
+													"key": "name",
+													"value": "el",
+													"description": "(Required) name"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/account/update/:id/:name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"update",
+												":id",
+												":name"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "8785424",
+													"description": "(Required) id"
+												},
+												{
+													"key": "name",
+													"value": "el",
+													"description": "(Required) name"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "addAccount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dateOfBirth\": \"2022-07-30T22:00:00.000+00:00\",\n  \"name\": \"sed et qui laborum sint\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/account/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"add"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"add"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"add"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "addAccounts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"dateOfBirth\": \"2022-07-30T22:00:00.000+00:00\",\n    \"name\": \"cillum est ut qui\"\n  },\n  {\n    \"dateOfBirth\": \"2022-07-30T22:00:00.000+00:00\",\n    \"name\": \"ipsum ut cupidatat proiden\"\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/account/addaccounts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account",
+								"addaccounts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"createdOn\": \"1984-05-27T06:52:18.973Z\",\n    \"dateOfBirth\": \"1946-08-11T22:34:59.631Z\",\n    \"deleted\": false,\n    \"filePath\": \"cupidatat Ut nisi fugiat veniam\",\n    \"id\": -58499633,\n    \"imageBase\": \"aliquip proident occaecat\",\n    \"name\": \"incididunt sed Excepteur min\",\n    \"updatedOn\": \"2008-03-02T09:05:32.865Z\"\n  },\n  {\n    \"createdOn\": \"1963-03-15T06:24:59.912Z\",\n    \"dateOfBirth\": \"1980-05-27T23:22:18.798Z\",\n    \"deleted\": false,\n    \"filePath\": \"qui\",\n    \"id\": 52598962,\n    \"imageBase\": \"dolor non nulla minim ut\",\n    \"name\": \"\",\n    \"updatedOn\": \"1997-10-26T07:19:04.182Z\"\n  }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/addaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"addaccounts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"createdOn\": \"1984-05-27T06:52:18.973Z\",\n    \"dateOfBirth\": \"1946-08-11T22:34:59.631Z\",\n    \"deleted\": false,\n    \"filePath\": \"cupidatat Ut nisi fugiat veniam\",\n    \"id\": -58499633,\n    \"imageBase\": \"aliquip proident occaecat\",\n    \"name\": \"incididunt sed Excepteur min\",\n    \"updatedOn\": \"2008-03-02T09:05:32.865Z\"\n  },\n  {\n    \"createdOn\": \"1963-03-15T06:24:59.912Z\",\n    \"dateOfBirth\": \"1980-05-27T23:22:18.798Z\",\n    \"deleted\": false,\n    \"filePath\": \"qui\",\n    \"id\": 52598962,\n    \"imageBase\": \"dolor non nulla minim ut\",\n    \"name\": \"\",\n    \"updatedOn\": \"1997-10-26T07:19:04.182Z\"\n  }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/addaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"addaccounts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"createdOn\": \"1984-05-27T06:52:18.973Z\",\n    \"dateOfBirth\": \"1946-08-11T22:34:59.631Z\",\n    \"deleted\": false,\n    \"filePath\": \"cupidatat Ut nisi fugiat veniam\",\n    \"id\": -58499633,\n    \"imageBase\": \"aliquip proident occaecat\",\n    \"name\": \"incididunt sed Excepteur min\",\n    \"updatedOn\": \"2008-03-02T09:05:32.865Z\"\n  },\n  {\n    \"createdOn\": \"1963-03-15T06:24:59.912Z\",\n    \"dateOfBirth\": \"1980-05-27T23:22:18.798Z\",\n    \"deleted\": false,\n    \"filePath\": \"qui\",\n    \"id\": 52598962,\n    \"imageBase\": \"dolor non nulla minim ut\",\n    \"name\": \"\",\n    \"updatedOn\": \"1997-10-26T07:19:04.182Z\"\n  }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/addaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"addaccounts"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"createdOn\": \"1984-05-27T06:52:18.973Z\",\n    \"dateOfBirth\": \"1946-08-11T22:34:59.631Z\",\n    \"deleted\": false,\n    \"filePath\": \"cupidatat Ut nisi fugiat veniam\",\n    \"id\": -58499633,\n    \"imageBase\": \"aliquip proident occaecat\",\n    \"name\": \"incididunt sed Excepteur min\",\n    \"updatedOn\": \"2008-03-02T09:05:32.865Z\"\n  },\n  {\n    \"createdOn\": \"1963-03-15T06:24:59.912Z\",\n    \"dateOfBirth\": \"1980-05-27T23:22:18.798Z\",\n    \"deleted\": false,\n    \"filePath\": \"qui\",\n    \"id\": 52598962,\n    \"imageBase\": \"dolor non nulla minim ut\",\n    \"name\": \"\",\n    \"updatedOn\": \"1997-10-26T07:19:04.182Z\"\n  }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/addaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"addaccounts"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"createdOn\": \"1984-05-27T06:52:18.973Z\",\n    \"dateOfBirth\": \"1946-08-11T22:34:59.631Z\",\n    \"deleted\": false,\n    \"filePath\": \"cupidatat Ut nisi fugiat veniam\",\n    \"id\": -58499633,\n    \"imageBase\": \"aliquip proident occaecat\",\n    \"name\": \"incididunt sed Excepteur min\",\n    \"updatedOn\": \"2008-03-02T09:05:32.865Z\"\n  },\n  {\n    \"createdOn\": \"1963-03-15T06:24:59.912Z\",\n    \"dateOfBirth\": \"1980-05-27T23:22:18.798Z\",\n    \"deleted\": false,\n    \"filePath\": \"qui\",\n    \"id\": 52598962,\n    \"imageBase\": \"dolor non nulla minim ut\",\n    \"name\": \"\",\n    \"updatedOn\": \"1997-10-26T07:19:04.182Z\"\n  }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/addaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"addaccounts"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/account/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"all"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"all"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"all"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "deleteAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/account/delete/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "deleteAccountById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"accountId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/account/delete2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account",
+								"delete2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"accountId\": -9095349\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/delete2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"delete2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"accountId\": -9095349\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/delete2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"delete2"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"accountId\": -9095349\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/delete2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"delete2"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"accountId\": -9095349\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/delete2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"delete2"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "findAccount",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/account/find/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account",
+								"find",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/find/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"find",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/find/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"find",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/find/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"find",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/account/find/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"find",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "uploadfile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imageFile",
+									"description": "(Required) imageFile",
+									"type": "file",
+									"src": "/home/belal/Pictures/Screenshots/Screenshot from 2022-08-31 14-18-50.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/account/uploadfile/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account",
+								"uploadfile",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "imageFile",
+											"description": "(Required) imageFile",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/uploadfile/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"uploadfile",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "imageFile",
+											"description": "(Required) imageFile",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/uploadfile/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"uploadfile",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "imageFile",
+											"description": "(Required) imageFile",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/uploadfile/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"uploadfile",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "imageFile",
+											"description": "(Required) imageFile",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/uploadfile/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"uploadfile",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "imageFile",
+											"description": "(Required) imageFile",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/uploadfile/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"uploadfile",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8785424",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

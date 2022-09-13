@@ -17,24 +17,29 @@ import javax.ws.rs.core.MediaType;
 public interface Services {
 	@POST
     @Path("/add")
-    public String addWallet(Wallet wallet);
+    public Object addWallet(Wallet wallet);
     
     @GET
     @Path("/find/{id}")
-    public Wallet getWallet(@PathParam("id") int id);
+    public Object getWallet(@PathParam("id") int id);
 
     @GET
     @Path("/all")
-    public List<Wallet> getAllWallets();
+    public Object getAllWallets();
 
     @PUT
-    @Path("/topup/{walletId}/{value}")
-    public Wallet topup(@PathParam("walletId") Long walletId,@PathParam("value") Double value);
+    @Path("/topup/{id}/{value}")
+    public Object topup(@PathParam("id") Long walletId,@PathParam("value") Double value);
+    
+    @POST
+    @Path("/topup2/{id}/{value}")
+    public Object topup2(@PathParam("id") Long walletId,@PathParam("value") Double value);
+
 
     @DELETE
     @Path("/delete/{id}")
     public void deleteWallet(@PathParam("id") int id); 
-    @GET
-    @Path("/topup/{walletId}/{value}")
-    public Wallet deduct(@PathParam("walletId") Long walletId,@PathParam("value") Double value);
+    @PUT
+    @Path("/deduct/{id}/{value}")
+    public Object deduct(@PathParam("id") Long walletId,@PathParam("value") Double value);
 }

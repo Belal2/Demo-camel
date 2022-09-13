@@ -21,8 +21,6 @@
 		<version.fuse>7.9.0.fuse-sb2-790065-redhat-00001</version.fuse>
 		<deploy.skip>true</deploy.skip>
 		<version-wildfly-maven-plugin>2.0.2.Final</version-wildfly-maven-plugin>
-		 <swagger.ui.dir>${project.build.directory}/dependency/META-INF/resources/webjars/swagger-ui/${swagger.ui.version}</swagger.ui.dir>
-        <swagger.ui.version>2.2.10</swagger.ui.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -40,7 +38,6 @@
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-cdi</artifactId>
 			<scope>provided</scope>
-			
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>
@@ -95,31 +92,6 @@
 			<artifactId>jboss-servlet-api_4.0_spec</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		 <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-swagger-java</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>jakarta.enterprise</groupId>
-            <artifactId>jakarta.enterprise.cdi-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>jakarta.inject</groupId>
-            <artifactId>jakarta.inject-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.transaction</groupId>
-            <artifactId>jboss-transaction-api_1.3_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
 	</dependencies>
 	<repositories>
 		<repository>
@@ -169,77 +141,6 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-		 <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack-swagger-ui</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.webjars</groupId>
-                                    <artifactId>swagger-ui</artifactId>
-                                    <version>${swagger.ui.version}</version>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <replaceregexp match="http://petstore.swagger.io/v2/swagger.json" replace="http://localhost:8080/rest/api/swagger" byline="true">
-                                    <fileset dir="${swagger.ui.dir}">
-                                        <include name="*.html" />
-                                        <include name="*.js" />
-                                    </fileset>
-                                    <fileset dir="${swagger.ui.dir}/lang">
-                                        <include name="*.js" />
-                                    </fileset>
-                                </replaceregexp>
-                            </target>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-swagger-ui</id>
-                        <phase>process-test-classes</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/${project.artifactId}</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${swagger.ui.dir}</directory>
-                                    <excludes>
-                                        <excludes>**/*.gz</excludes>
-                                    </excludes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>

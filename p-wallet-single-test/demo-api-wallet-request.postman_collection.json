@@ -1,0 +1,1632 @@
+{
+	"info": {
+		"_postman_id": "b336c325-50bc-45ba-99a0-d65a3729471f",
+		"name": "demo-api-wallet-request",
+		"description": "Api Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12650096"
+	},
+	"item": [
+		{
+			"name": "wallet",
+			"item": [
+				{
+					"name": "addWalletAccount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"balance\": 87435615.64961559,\n  \"dateOfBirth\": \"2022-07-30T22:00:00.000+00:00\",\n  \"id\": 60609670,\n  \"lastUpdate\": \"2022-07-30T22:00:00.000+00:00\",\n  \"name\": \"dol\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/wallet/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallet",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"balance\": 87435615.64961559,\n  \"dateOfBirth\": \"1959-12-15T15:42:23.829Z\",\n  \"id\": 60609670,\n  \"lastUpdate\": \"2015-09-02T13:04:16.276Z\",\n  \"name\": \"dol\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"balance\": 87435615.64961559,\n  \"dateOfBirth\": \"1959-12-15T15:42:23.829Z\",\n  \"id\": 60609670,\n  \"lastUpdate\": \"2015-09-02T13:04:16.276Z\",\n  \"name\": \"dol\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"balance\": 87435615.64961559,\n  \"dateOfBirth\": \"1959-12-15T15:42:23.829Z\",\n  \"id\": 60609670,\n  \"lastUpdate\": \"2015-09-02T13:04:16.276Z\",\n  \"name\": \"dol\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"add"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"balance\": 87435615.64961559,\n  \"dateOfBirth\": \"1959-12-15T15:42:23.829Z\",\n  \"id\": 60609670,\n  \"lastUpdate\": \"2015-09-02T13:04:16.276Z\",\n  \"name\": \"dol\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"add"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"balance\": 87435615.64961559,\n  \"dateOfBirth\": \"1959-12-15T15:42:23.829Z\",\n  \"id\": 60609670,\n  \"lastUpdate\": \"2015-09-02T13:04:16.276Z\",\n  \"name\": \"dol\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"add"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/wallet/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallet",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"all"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"all"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"all"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "deduction",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/wallet/deduct/7/50",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallet",
+								"deduct",
+								"7",
+								"50"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/deduct/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"deduct",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/deduct/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"deduct",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/deduct/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"deduct",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/deduct/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"deduct",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/deduct/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"deduct",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "deleteWalletAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/wallet/delete/7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallet",
+								"delete",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "deleteWalletById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"walletId\": 82647015\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/wallet/delete2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallet",
+								"delete2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"walletId\": 82647015\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet/delete2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"delete2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"walletId\": 82647015\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet/delete2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"delete2"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"walletId\": 82647015\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet/delete2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"delete2"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"walletId\": 82647015\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallet/delete2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"delete2"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "findAccount",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/wallet/find/8",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallet",
+								"find",
+								"8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/find/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"find",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/find/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"find",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/find/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"find",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/find/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"find",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "TopUp",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/wallet/topup/8/50",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallet",
+								"topup",
+								"8",
+								"50"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/topup/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"topup",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/topup/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"topup",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/topup/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"topup",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/topup/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"topup",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/topup/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"topup",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/wallet/topup2/8/-100",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallet",
+								"topup2",
+								"8",
+								"-100"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/topup2/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"topup2",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/topup2/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"topup2",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/topup2/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"topup2",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/topup2/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"topup2",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/wallet/topup2/:id/:amount",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallet",
+										"topup2",
+										":id",
+										":amount"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-96846848",
+											"description": "(Required) id"
+										},
+										{
+											"key": "amount",
+											"value": "-14088816.144490972",
+											"description": "(Required) amount"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
