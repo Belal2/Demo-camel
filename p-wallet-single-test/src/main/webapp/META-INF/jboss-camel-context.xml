@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:cxf="http://camel.apache.org/schema/cxf"
+    xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd     http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <cxf:rsServer address="http://*:8080/wallet" id="services" serviceClass="org.test.Services">
+        <cxf:providers>
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+        </cxf:providers>
+    </cxf:rsServer>
+    <bean class="org.test.MyBean" id="helloBean"/>
+    <camelContext id="wallet-test-context" xmlns="http://camel.apache.org/schema/spring">
+        <route id="route">
+            <from id="base-service" uri="cxfrs:bean:services?bindingStyle=SimpleConsumer"/>
+            <toD id="operationName" uri="direct:${header.operationName}"/>
+        </route>
+        <route id="route1">
+            <from id="id1" uri="direct:addWallet"/>
+            <to id="_to1" uri="http://localhost:3000/wallet/add"/>
+        </route>
+        <route id="route2">
+            <from id="id3=2" uri="direct:getWallet"/>
+            <to id="_to2" uri="http://localhost:3000/wallet/find/${body.id}"/>
+        </route>
+        <route id="route3">
+            <from id="id3" uri="direct:getAllWallets"/>
+            <to id="_to3" uri="http://localhost:3000/wallet/all"/>
+        </route>
+        <route id="route4">
+            <from id="id4" uri="direct:updateWallet"/>
+            <to id="_to4" uri="http://localhost:3000/wallet/update/${body.id}"/>
+        </route>
+        <route id="route5">
+            <from id="id45" uri="direct:deleteWallet"/>
+            <to id="_to5" uri="http://localhost:3000/wallet/delete/${body.id}"/>
+        </route>
+    </camelContext>
+</beans>
