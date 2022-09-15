@@ -5,15 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DeletedDto {
-	@JsonProperty("accountId")
-	private Long accountId;
+	@JsonProperty("walletId")
+	private String walletId;
 
-	public Long getAccountId() {
-		return accountId;
+	public String getWalletId() {
+		return walletId;
 	}
 
-	public void setAccountId(Long accountId) {
-		this.accountId = accountId;
+	public void setWalletId(String walletId) {
+		this.walletId = walletId;
 	}
 
 }

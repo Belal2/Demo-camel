@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:cxf="http://camel.apache.org/schema/cxf"
-    xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd     http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
-    <cxf:rsServer address="http://*:8080/wallet" id="services" serviceClass="org.test.Services">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:cxf="http://camel.apache.org/schema/cxf" xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd     http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+	<cxf:rsServer address="http://*:8080/wallet" id="services" serviceClass="org.test.Services">
 		<cxf:providers>
 			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
 		</cxf:providers>
 	</cxf:rsServer>
-	<bean class="org.test.MyBean" id="helloBean" />
+	<bean class="org.test.MyBean" id="myBean" />
 	<camelContext id="wallet-test-context" xmlns="http://camel.apache.org/schema/spring">
-	<propertyPlaceholder id="properties" location="classpath:application.properties" />
+		<propertyPlaceholder id="properties" location="classpath:application.properties" />
 		<dataFormats>
 			<json id="Wallet" library="Jackson" unmarshalTypeName="org.test.Wallet" />
 			<json id="DeletedDto" library="Jackson" unmarshalTypeName="org.test.DeletedDto" />
 			<json id="WalletList" library="Jackson" unmarshalTypeName="org.test.Wallet" useList="true" />
 		</dataFormats>
-
 		<route id="route">
 			<from id="base-service" uri="cxfrs:bean:services?bindingStyle=SimpleConsumer" />
 			<toD id="operationName" uri="direct:${header.operationName}" />
@@ -51,7 +47,6 @@
 			</setBody>
 			<toD id="_to5" uri="{{SERVER_PATH}}${property.pathV}" />
 		</route>
-
 		<route id="routde4">
 			<from id="id4" uri="direct:topup" />
 			<to id="dgdg" uri="direct:put-header-from" />
@@ -60,7 +55,6 @@
 			</setBody>
 			<toD id="_tgo4" uri="{{SERVER_PATH}}${property.pathV}" />
 		</route>
-
 		<route id="routde4fd">
 			<from id="id4fd" uri="direct:topup2" />
 			<to id="dgddsg" uri="direct:post-header-from" />
@@ -69,7 +63,6 @@
 			</setBody>
 			<toD id="_ddaf" uri="{{SERVER_PATH}}${property.pathV}" />
 		</route>
-
 		<route id="routdesdf4fd">
 			<from id="id4sdfd" uri="direct:deduct" />
 			<to id="dgddsdfsg" uri="direct:put-header-from" />
@@ -77,6 +70,21 @@
 				<constant />
 			</setBody>
 			<toD id="_tgo4d" uri="{{SERVER_PATH}}${property.pathV}" />
+		</route>
+
+		<route id="routde66">
+			<from id="fid4d52" uri="direct:uploadfile" />
+			<setProperty id="_setProddperty1" propertyName="pathV">
+				<simple>${header.CamelfHttpUri}</simple>
+			</setProperty>
+			<bean id="_befan1" method="process" ref="myBean" />
+			<toD id="_tofa25" uri="{{SERVER_PATH}}${property.pathV}" />
+		</route>
+<route id="route55">
+			<from id="id452" uri="direct:delete2" />
+			<marshal id="_marshalad1" ref="DeletedDto" />
+			<to id="_to1kj2" uri="direct:delete-header-from" />
+			<toD id="_to25" uri="{{SERVER_PATH}}${property.pathV}?deleteWithBody=true" />
 		</route>
 
 		<route id="get-header-route">

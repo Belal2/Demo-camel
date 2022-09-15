@@ -1,8 +1,11 @@
 package org.test;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
@@ -12,14 +15,16 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.apache.camel.Attachment;
 import org.apache.camel.Body;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
 @Consumes(value = { MediaType.APPLICATION_JSON ,MediaType.MULTIPART_FORM_DATA})
-@Produces(value = { MediaType.APPLICATION_JSON })
+@Produces(value = { MediaType.APPLICATION_JSON ,MediaType.MULTIPART_FORM_DATA})
 public interface services {
 
 	@POST
@@ -55,6 +60,6 @@ public interface services {
 	
 	@POST
 	@Path("/uploadfile/{id}")
-	@Consumes("multipart/form-data")
-	public Object uploadfile(@PathParam("id") Long id,@Multipart(value = "imageFile") File  mulfile) throws Exception;
+	 @Consumes(MediaType.MULTIPART_FORM_DATA)
+	public Object uploadfile(@PathParam("id") Long id,@Multipart(value = "imageFile") org.apache.cxf.jaxrs.ext.multipart.Attachment  mulfile) ;
 }
