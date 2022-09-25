@@ -59,7 +59,7 @@ public interface services {
 	public Object delete2(@Body DeletedDto delDto);
 	
 	@POST
-	@Path("/uploadfile/{id}")
+	@Path("/uploadImage/{id}")
 	 @Consumes(MediaType.MULTIPART_FORM_DATA)
 	public Object uploadfile(@PathParam("id") Long id,@Multipart(value = "imageFile") org.apache.cxf.jaxrs.ext.multipart.Attachment  mulfile) ;
 }
